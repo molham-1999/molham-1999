@@ -76,6 +76,7 @@
       <br>CyberPanel
     </td>
     <br>
+        <br>
     <td align="center" width="96">
       <img src="https://cdn.worldvectorlogo.com/logos/cloudpanel.svg" width="48" height="48" alt="CloudPanel" />
       <br>CloudPanel
