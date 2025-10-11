@@ -1,24 +1,7 @@
 <h1 align="left" id="mohammed-title">👋 Hello there! I'm Mohammed</h1>
 <h3 align="left">Full-Stack Web Developer | Linux Administrator | Security Enthusiast</h3>
 
-<p align="left">
-  <a href="https://github.com/YOUR_USERNAME">
-    <img src="https://komarev.com/ghpvc/?username=YOUR_USERNAME" alt="page views" />
-  </a>
-  <a href="https://YOUR-WEBSITE.com">
-    <img alt="Website" src="https://img.shields.io/website?url=https%3A%2F%2FYOUR-WEBSITE.com">
-  </a>
-  <a href="https://github.com/YOUR_USERNAME?tab=followers">
-    <img alt="GitHub followers" src="https://img.shields.io/github/followers/YOUR_USERNAME?style=flat&logo=github">
-  </a>
-  <a href="mailto:YOUR@EMAIL.com">
-    <img alt="Email" src="https://img.shields.io/badge/Email-Contact-orange?logo=gmail">
-  </a>
-</p>
 
-<a href="#mohammed-title">
-  <img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=transparent" alt="mohammed-stats" align="right" width="420" />
-</a>
 
 - 💻 Skilled in **PHP (Laravel)**, **JavaScript**, **HTML**, **CSS**, and **MySQL**  
 - 🐧 Experienced with **Ubuntu**, **Debian**, and **AlmaLinux** server environments  
@@ -84,7 +67,7 @@
       <br>Ubuntu
     </td>
     <td align="center" width="96">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Debian-OpenLogo.svg" width="48" height="48" alt="Debian" />
+      <img src="https://www.svgrepo.com/show/354912/debian.svg" width="48" height="48" alt="Debian" />
       <br>Debian
     </td>
     <td align="center" width="96">
@@ -96,7 +79,7 @@
       <br>CloudPanel
     </td>
     <td align="center" width="96">
-      <img src="https://companieslogo.com/img/orig/CPANEL-85b1a1db.png?t=1720983983" width="70" height="48" alt="cPanel" />
+      <img src="https://www.svgrepo.com/show/353612/cpanel.svg" width="70" height="48" alt="cPanel" />
       <br>cPanel
     </td>
     <td align="center" width="96">
