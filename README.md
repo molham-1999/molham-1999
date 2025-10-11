@@ -69,6 +69,10 @@
       <img src="https://www.svgrepo.com/show/353612/cpanel.svg" width="70" height="48" alt="cPanel" />
       <br>cPanel
     </td>
+      <td align="center" width="96">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Logo_Plesk.svg" width="48" height="48" alt="Plesk" />
+      <br>Plesk
+    </td>
     <td align="center" width="96">
       <img src="https://cdn.worldvectorlogo.com/logos/cyberpanel.svg" width="48" height="48" alt="CyberPanel" />
       <br>CyberPanel
