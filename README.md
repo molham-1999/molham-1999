@@ -80,7 +80,7 @@
 <table>
   <tr>
     <td align="center" width="96">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Ubuntu_logo_Porange_RGB.svg" width="48" height="48" alt="Ubuntu" />
+      <img src="https://www.svgrepo.com/show/452122/ubuntu.svg" width="48" height="48" alt="Ubuntu" />
       <br>Ubuntu
     </td>
     <td align="center" width="96">
