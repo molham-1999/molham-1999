@@ -1,10 +1,6 @@
 <h1 align="left" id="mohammed-title">👋 Hello there! I'm Molham</h1>
 <h3 align="left">Full-Stack Web Developer | Linux Administrator | Security Enthusiast</h3>
 
-
-<br>
-## ⌨️ WakaTime Stats
-[![wakatime](https://wakatime.com/share/@USERNAME/PROJECT_ID.svg)](https://wakatime.com/@USERNAME)
 <br>
 <h2 align="left" id="mohammed-tech">🧠 Favorite Tech Stack</h2>
 
