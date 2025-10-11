@@ -3,7 +3,9 @@
 
 
 <br>
-
+## ⌨️ WakaTime Stats
+[![wakatime](https://wakatime.com/share/@USERNAME/PROJECT_ID.svg)](https://wakatime.com/@USERNAME)
+<br>
 <h2 align="left" id="mohammed-tech">🧠 Favorite Tech Stack</h2>
 
 ### 🖥️ Programming & Frameworks
