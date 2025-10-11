@@ -1,15 +1,6 @@
-<h1 align="left" id="mohammed-title">👋 Hello there! I'm Mohammed</h1>
+<h1 align="left" id="mohammed-title">👋 Hello there! I'm Molham</h1>
 <h3 align="left">Full-Stack Web Developer | Linux Administrator | Security Enthusiast</h3>
 
-
-
-- 💻 Skilled in **PHP (Laravel)**, **JavaScript**, **HTML**, **CSS**, and **MySQL**  
-- 🐧 Experienced with **Ubuntu**, **Debian**, and **AlmaLinux** server environments  
-- ⚙️ Managing hosting panels like **CyberPanel**, **CloudPanel**, and **cPanel**  
-- 🐳 Using **Docker** for isolated development  
-- 🐍 Learning **Python** for automation  
-- 🔒 Interested in **Cyber Security** and **System Hardening**  
-- 🌍 Based in **Saudi Arabia**  
 
 <br>
 
@@ -71,37 +62,23 @@
       <br>Debian
     </td>
         <td align="center" width="96">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/AlmaLinux_logo.svg" width="48" height="48" alt="AlmaLinux" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/13/AlmaLinux_Icon_Logo.svg" width="48" height="48" alt="AlmaLinux" />
       <br>AlmaLinux
     </td>
-    <td align="center" width="96">
-      <img src="https://seeklogo.com/images/C/cyberpanel-logo-964D0E8A62-seeklogo.com.png" width="48" height="48" alt="CyberPanel" />
-      <br>CyberPanel
-    </td>
-    <td align="center" width="96">
-      <img src="https://www.cloudpanel.io/images/logo.svg" width="48" height="48" alt="CloudPanel" />
-      <br>CloudPanel
-    </td>
-    <td align="center" width="96">
+        <td align="center" width="96">
       <img src="https://www.svgrepo.com/show/353612/cpanel.svg" width="70" height="48" alt="cPanel" />
       <br>cPanel
     </td>
-
     <td align="center" width="96">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg" width="48" height="48" alt="Linux" />
-      <br>Linux
+      <img src="https://cdn.worldvectorlogo.com/logos/cyberpanel.svg" width="48" height="48" alt="CyberPanel" />
+      <br>CyberPanel
     </td>
+    <td align="center" width="96">
+      <img src="https://cdn.worldvectorlogo.com/logos/cloudpanel.svg" width="48" height="48" alt="CloudPanel" />
+      <br>CloudPanel
+    </td>
+
+
   </tr>
 </table>
 
----
-
-<h2 align="left">📊 GitHub Stats</h2>
-
-<p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=YOUR_USERNAME&theme=transparent" alt="mohammed-streak-stats" />
-</p>
-
----
-
-⭐ **If you like my work, don't forget to give a Star!**
