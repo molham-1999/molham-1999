@@ -70,6 +70,10 @@
       <img src="https://www.svgrepo.com/show/354912/debian.svg" width="48" height="48" alt="Debian" />
       <br>Debian
     </td>
+        <td align="center" width="96">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/AlmaLinux_logo.svg" width="48" height="48" alt="AlmaLinux" />
+      <br>AlmaLinux
+    </td>
     <td align="center" width="96">
       <img src="https://seeklogo.com/images/C/cyberpanel-logo-964D0E8A62-seeklogo.com.png" width="48" height="48" alt="CyberPanel" />
       <br>CyberPanel
@@ -82,10 +86,7 @@
       <img src="https://www.svgrepo.com/show/353612/cpanel.svg" width="70" height="48" alt="cPanel" />
       <br>cPanel
     </td>
-    <td align="center" width="96">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/AlmaLinux_logo.svg" width="48" height="48" alt="AlmaLinux" />
-      <br>AlmaLinux
-    </td>
+
     <td align="center" width="96">
       <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg" width="48" height="48" alt="Linux" />
       <br>Linux
