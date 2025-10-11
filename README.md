@@ -44,7 +44,7 @@
       <br>Docker
     </td>
     <td align="center" width="96">
-      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/wordpress/wordpress-original.svg" width="48" height="48" alt="WordPress" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/WordPress_blue_logo.svg" width="48" height="48" alt="WordPress" />
       <br>WordPress
     </td>
   </tr>
