@@ -17,7 +17,7 @@ jobs:
           REPOSITORY: molham-1999/molham-1999
           SHOW_TITLE: true
           SECTION_NAME: waka
-          BLOCKS: ->
+          BLOCKS: all
           CODE_LANG: all
           TIME_RANGE: all_time
           LANG_COUNT: 10
@@ -31,5 +31,5 @@ jobs:
           TARGET_PATH: README.md
           COMMITTER_NAME: GitHubActionBot
           COMMITTER_EMAIL: action-bot@github.com
-          AUTHOR_NAME: Mohammed Molham
-          AUTHOR_EMAIL: your-email@example.com
+          AUTHOR_NAME: Molham
+          AUTHOR_EMAIL: admin@malhoum.com
