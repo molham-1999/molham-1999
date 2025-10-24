@@ -87,15 +87,14 @@
 </table>
 <!--START_SECTION:waka-->
 
+```all
+From: 07 October 2025 - To: 23 October 2025
 
+Total Time: 15 hrs 2 mins
 
-
-
-
-
-
-
-
-
+PHP              9 hrs 16 mins   lllllllllllllllaaaaaaaaaa   59.34 %
+Blade Template   3 hrs 30 mins   llllllaaaaaaaaaaaaaaaaaaa   22.39 %
+Other            36 mins         laaaaaaaaaaaaaaaaaaaaaaaa   03.86 %
+```
 
 <!--END_SECTION:waka-->
