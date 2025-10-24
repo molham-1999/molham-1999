@@ -5,25 +5,21 @@ on:
   schedule:
     - cron: "0 0 * * *"
 
-permissions:
-  contents: write
-
 jobs:
   update-readme:
     name: WakaReadme DevMetrics
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-
       - uses: athul/waka-readme@master
         with:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
           API_BASE_URL: https://wakatime.com/api
           REPOSITORY: molham-1999/molham-1999
           SHOW_TITLE: true
           SECTION_NAME: waka
-          BLOCKS: all
-          CODE_LANG: all
+          BLOCKS: ->
+          CODE_LANG: rust
           TIME_RANGE: all_time
           LANG_COUNT: 10
           SHOW_TIME: true
@@ -31,42 +27,10 @@ jobs:
           SHOW_MASKED_TIME: false
           STOP_AT_OTHER: true
           IGNORED_LANGUAGES: YAML JSON TOML
-          COMMIT_MESSAGE: "Updated waka-readme graph with new metrics"
-          TARGET_BRANCH: main
+          COMMIT_MESSAGE: Updated waka-readme graph with new metrics
+          TARGET_BRANCH: master
           TARGET_PATH: README.md
           COMMITTER_NAME: GitHubActionBot
           COMMITTER_EMAIL: action-bot@github.com
-          AUTHOR_NAME: Molham
+          AUTHOR_NAME: Mohammed Molham
           AUTHOR_EMAIL: admin@malhoum.com
-
-      - name: Beautify and Color WakaTime Stats
-        run: |
-          README="/github/workspace/README.md"
-          DATE=$(date '+%B %d, %Y')
-          if [ -f "$README" ]; then
-            CONTENT=$(sed -n '/<!-- START_WAKATIME -->/,/<!-- END_WAKATIME -->/p' "$README" | sed '1d;$d')
-            
-            FORMATTED="<div align='center'>
-<h2>📊 WakaTime Stats</h2>
-<p>Last updated: <strong>$DATE</strong></p>
-<table>
-<tr><th>Language</th><th>Time</th><th>Progress</th></tr>"
-
-            while IFS= read -r line; do
-              LANG=$(echo $line | awk '{print $1}')
-              TIME=$(echo $line | awk '{print $2,$3}')
-              PERC=$(echo $line | awk '{print $NF}' | tr -d '%')
-              COLOR="#$(printf '%06X' $(( RANDOM*RANDOM )))"
-              FORMATTED="$FORMATTED<tr>
-<td><strong>$LANG</strong></td>
-<td>$TIME</td>
-<td><div style='background:#eee; border-radius:5px; width:200px;'>
-<div style='width:$PERC%; background:$COLOR; height:15px; border-radius:5px;'></div>
-</div></td>
-</tr>"
-            done <<< "$CONTENT"
-
-            FORMATTED="$FORMATTED</table></div>"
-
-            sed -i "/<!-- START_WAKATIME -->/,/<!-- END_WAKATIME -->/c\\$FORMATTED" "$README"
-          fi
