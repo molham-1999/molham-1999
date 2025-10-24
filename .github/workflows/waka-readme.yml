@@ -13,7 +13,11 @@ jobs:
     name: WakaReadme DevMetrics
     runs-on: ubuntu-latest
     steps:
-      - uses: athul/waka-readme@master
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Update README with WakaTime stats
+        uses: athul/waka-readme@master
         with:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
@@ -35,3 +39,14 @@ jobs:
           COMMITTER_EMAIL: action-bot@github.com
           AUTHOR_NAME: Molham
           AUTHOR_EMAIL: admin@malhoum.com
+
+      - name: Add last update timestamp
+        run: |
+          current_date=$(date +"%Y-%m-%d %H:%M:%S")
+          echo -e "\n\n**Last Updated:** $current_date" >> README.md
+          
+          git config --local user.name "GitHubActionBot"
+          git config --local user.email "action-bot@github.com"
+          git add README.md
+          git commit -m "Add last update timestamp: $current_date" || exit 0
+          git push
