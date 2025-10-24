@@ -21,7 +21,7 @@ jobs:
           BLOCKS: ""
           CODE_LANG: all
           TIME_RANGE: all_time
-          LANG_COUNT: 10 
+          LANG_COUNT: 10
           SHOW_TIME: true
           SHOW_TOTAL: true
           SHOW_MASKED_TIME: false
@@ -32,5 +32,5 @@ jobs:
           TARGET_PATH: README.md
           COMMITTER_NAME: GitHubActionBot
           COMMITTER_EMAIL: action-bot@github.com
-          AUTHOR_NAME: Mohammed Molham
-          AUTHOR_EMAIL: your-email@example.com
+          AUTHOR_NAME: Molham
+          AUTHOR_EMAIL: admin@malhoum.com
