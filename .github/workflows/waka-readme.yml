@@ -3,7 +3,7 @@ name: Waka Readme
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 * * *" 
+    - cron: "0 0 * * *"
 
 jobs:
   update-readme:
@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: athul/waka-readme@master
         with:
-          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }} 
+          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
           API_BASE_URL: https://wakatime.com/api
           REPOSITORY: molham-1999/molham-1999
           SHOW_TITLE: true
@@ -27,7 +27,7 @@ jobs:
           STOP_AT_OTHER: true
           IGNORED_LANGUAGES: YAML JSON TOML
           COMMIT_MESSAGE: "Updated waka-readme graph with new metrics"
-          TARGET_BRANCH: master
+          TARGET_BRANCH: main 
           TARGET_PATH: README.md
           COMMITTER_NAME: GitHubActionBot
           COMMITTER_EMAIL: action-bot@github.com
