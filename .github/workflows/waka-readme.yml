@@ -13,12 +13,14 @@ jobs:
     name: WakaReadme DevMetrics
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+
       - uses: athul/waka-readme@master
         with:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
           API_BASE_URL: https://wakatime.com/api
           REPOSITORY: molham-1999/molham-1999
-          SHOW_TITLE: false
+          SHOW_TITLE: true
           SECTION_NAME: waka
           BLOCKS: all
           CODE_LANG: all
@@ -29,20 +31,19 @@ jobs:
           SHOW_MASKED_TIME: false
           STOP_AT_OTHER: true
           IGNORED_LANGUAGES: YAML JSON TOML
+          COMMIT_MESSAGE: "Updated waka-readme graph with new metrics"
           TARGET_BRANCH: main
           TARGET_PATH: README.md
-          COMMIT_MESSAGE: "Update WakaTime stats with colors and date"
           COMMITTER_NAME: GitHubActionBot
           COMMITTER_EMAIL: action-bot@github.com
           AUTHOR_NAME: Molham
           AUTHOR_EMAIL: admin@malhoum.com
+
       - name: Beautify WakaTime README
         run: |
+          README="/github/workspace/README.md"
           DATE=$(date '+%B %d, %Y')
-          sed -i "/<!-- START_WAKATIME -->/,/<!-- END_WAKATIME -->/c\<div align='center'>\n<h2>📊 WakaTime Stats</h2>\n<p>Last updated: $DATE</p>\n<pre>\n$(cat README.md | grep -A 20 "waka")\n</pre>\n</div>" README.md
-      - name: Commit changes
-        uses: EndBug/add-and-commit@v9
-        with:
-          author_name: 'Molham'
-          author_email: 'admin@malhoum.com'
-          message: 'Beautified WakaTime stats with date'
+          if [ -f "$README" ]; then
+            CONTENT=$(sed -n '/<!-- START_WAKATIME -->/,/<!-- END_WAKATIME -->/p' "$README")
+            sed -i "/<!-- START_WAKATIME -->/,/<!-- END_WAKATIME -->/c\<div align='center'>\n<h2>📊 WakaTime Stats</h2>\n<p>Last updated: $DATE</p>\n<pre>\n$CONTENT\n</pre>\n</div>" "$README"
+          fi
