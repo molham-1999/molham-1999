@@ -39,11 +39,34 @@ jobs:
           AUTHOR_NAME: Molham
           AUTHOR_EMAIL: admin@malhoum.com
 
-      - name: Beautify WakaTime README
+      - name: Beautify and Color WakaTime Stats
         run: |
           README="/github/workspace/README.md"
           DATE=$(date '+%B %d, %Y')
           if [ -f "$README" ]; then
-            CONTENT=$(sed -n '/<!-- START_WAKATIME -->/,/<!-- END_WAKATIME -->/p' "$README")
-            sed -i "/<!-- START_WAKATIME -->/,/<!-- END_WAKATIME -->/c\<div align='center'>\n<h2>📊 WakaTime Stats</h2>\n<p>Last updated: $DATE</p>\n<pre>\n$CONTENT\n</pre>\n</div>" "$README"
+            CONTENT=$(sed -n '/<!-- START_WAKATIME -->/,/<!-- END_WAKATIME -->/p' "$README" | sed '1d;$d')
+            
+            FORMATTED="<div align='center'>
+<h2>📊 WakaTime Stats</h2>
+<p>Last updated: <strong>$DATE</strong></p>
+<table>
+<tr><th>Language</th><th>Time</th><th>Progress</th></tr>"
+
+            while IFS= read -r line; do
+              LANG=$(echo $line | awk '{print $1}')
+              TIME=$(echo $line | awk '{print $2,$3}')
+              PERC=$(echo $line | awk '{print $NF}' | tr -d '%')
+              COLOR="#$(printf '%06X' $(( RANDOM*RANDOM )))"
+              FORMATTED="$FORMATTED<tr>
+<td><strong>$LANG</strong></td>
+<td>$TIME</td>
+<td><div style='background:#eee; border-radius:5px; width:200px;'>
+<div style='width:$PERC%; background:$COLOR; height:15px; border-radius:5px;'></div>
+</div></td>
+</tr>"
+            done <<< "$CONTENT"
+
+            FORMATTED="$FORMATTED</table></div>"
+
+            sed -i "/<!-- START_WAKATIME -->/,/<!-- END_WAKATIME -->/c\\$FORMATTED" "$README"
           fi
