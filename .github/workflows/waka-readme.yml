@@ -12,14 +12,12 @@ jobs:
     steps:
       - uses: athul/waka-readme@master
         with:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
-          API_BASE_URL: https://wakatime.com/api
-          REPOSITORY: molham-1999/molham-1999
           SHOW_TITLE: true
           SECTION_NAME: waka
           BLOCKS: "->"
-          CODE_LANG: rust
+          CODE_LANG: all
           TIME_RANGE: all_time
           LANG_COUNT: 10
           SHOW_TIME: true
@@ -27,10 +25,10 @@ jobs:
           SHOW_MASKED_TIME: false
           STOP_AT_OTHER: true
           IGNORED_LANGUAGES: YAML JSON TOML
-          COMMIT_MESSAGE: Updated waka-readme graph with new metrics
-          TARGET_BRANCH: master
+          COMMIT_MESSAGE: "Updated waka-readme graph with new metrics"
+          TARGET_BRANCH: main
           TARGET_PATH: README.md
           COMMITTER_NAME: GitHubActionBot
           COMMITTER_EMAIL: action-bot@github.com
-          AUTHOR_NAME: Mohammed Molham
+          AUTHOR_NAME: Molham
           AUTHOR_EMAIL: admin@malhoum.com
