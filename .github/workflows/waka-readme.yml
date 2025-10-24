@@ -13,26 +13,50 @@ jobs:
     name: WakaReadme DevMetrics
     runs-on: ubuntu-latest
     steps:
-      - uses: athul/waka-readme@master
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Generate WakaTime README
+        uses: athul/waka-readme@master
+        id: waka
         with:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
           API_BASE_URL: https://wakatime.com/api
           REPOSITORY: molham-1999/molham-1999
-          SHOW_TITLE: false
+          SHOW_TITLE: true
           SECTION_NAME: waka
           BLOCKS: all
           CODE_LANG: all
           TIME_RANGE: all_time
-          LANG_COUNT: 5
+          LANG_COUNT: 10
           SHOW_TIME: true
           SHOW_TOTAL: true
           SHOW_MASKED_TIME: false
           STOP_AT_OTHER: true
           IGNORED_LANGUAGES: YAML JSON TOML
-          COMMIT_MESSAGE: "✨ Updated waka-readme with beautiful metrics"
+          COMMIT_MESSAGE: "Update WakaTime stats"
           TARGET_BRANCH: main
           TARGET_PATH: README.md
           COMMITTER_NAME: GitHubActionBot
           COMMITTER_EMAIL: action-bot@github.com
           AUTHOR_NAME: Molham
           AUTHOR_EMAIL: admin@malhoum.com
+
+      - name: Beautify README with colors
+        run: |
+          TIMESTAMP=$(date +"%B %d, %Y")
+          # Extract Waka section content
+          CONTENT=$(sed -n '/<!--waka-start-->/, /<!--waka-end-->/p' README.md | sed '1d;$d')
+
+          # Prepare styled HTML content
+          STYLED_CONTENT="<h2>WakaTime Stats (Updated $TIMESTAMP)</h2>
+<div style=\"font-family:monospace; background:#1e1e2f; color:white; padding:15px; border-radius:12px;\">
+$CONTENT
+</div>
+<p style=\"font-size:12px; color:#888; margin-top:5px;\">Powered by WakaTime</p>"
+
+          # Add colored bars for each language
+          STYLED_CONTENT=$(echo "$STYLED_CONTENT" | sed -E 's/^([A-Za-z0-9 _]+)\s+([0-9]+ hrs [0-9]+ mins)\s+(.*)\s+([0-9.]+ %)/<div style=\"margin:3px 0;\"><span style=\"display:inline-block; width:120px; font-weight:bold;\">\\1</span> <span style=\"color:#a6e22e;\">\\2</span> <span style=\"background:#f92672; display:inline-block; height:10px; width:calc(\\4 * 0.9); border-radius:5px;\"></span> <span style=\"margin-left:5px;\">\\4</span><\/div>/')
+
+          # Replace the Waka section in README
+          sed -i "/<!--waka-start-->/, /<!--waka-end-->/c\<!--waka-start-->\n$STYLED_CONTENT\n<!--waka-end-->" README.md
