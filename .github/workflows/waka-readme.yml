@@ -10,23 +10,42 @@ permissions:
 
 jobs:
   update-readme:
+    name: Update WakaTime Stats
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: athul/waka-readme@master
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
         with:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
-          SHOW_TITLE: false
-          BLOCKS: "languages, editors, projects"
-          TIME_RANGE: "all_time"
-      - run: |
-          DATE="🕒 Last Updated: $(date +'%d %B %Y')"
-          sed -i "/<!--START_SECTION:waka-->/a $DATE" README.md
-      - run: |
+          python-version: "3.x"
+
+      - name: Install WakaReadme
+        run: |
+          python -m pip install --upgrade pip
+          pip install waka-readme
+
+      - name: Generate WakaTime stats
+        run: |
+          waka-readme \
+            --gh-token ${{ secrets.GITHUB_TOKEN }} \
+            --waka-api-key ${{ secrets.WAKATIME_API_KEY }} \
+            --target-path README.md \
+            --section-name "waka" \
+            --blocks "languages" \
+            --time-range "all_time" \
+            --show-title true
+
+      - name: Add last updated date
+        run: |
+          DATE=$(date +"%d %B %Y")
+          sed -i "1i <!--START_SECTION:waka-->\n🕒 Last Updated: $DATE\n<!--END_SECTION:waka-->" README.md
+
+      - name: Commit and Push
+        run: |
           git config --global user.name "GitHubActionBot"
           git config --global user.email "action@github.com"
-      - run: |
           git add README.md
           git commit -m "🕒 Update WakaTime stats with last updated date" || echo "No changes to commit"
-          git push
+          git pull --rebase origin main
+          git push origin main --force
