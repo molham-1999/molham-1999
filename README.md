@@ -91,7 +91,13 @@
   <p style="color:#555;">Updated automatically from <strong>WakaTime</strong></p>
 </div>
 
+- name: Add last updated date
+  run: |
+    DATE=$(date +"%d %B %Y")
+    sed -i "1s/^/🕒 Last Updated: $DATE\n\n/" README.md
+
 <!--START_SECTION:waka-->
+
 
 ```all
 From: 07 October 2025 - To: 24 October 2025
