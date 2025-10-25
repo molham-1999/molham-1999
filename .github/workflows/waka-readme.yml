@@ -1,4 +1,4 @@
-name: Waka Readme with Date
+name: Waka Readme
 
 on:
   workflow_dispatch:
@@ -7,20 +7,11 @@ on:
 
 jobs:
   update-readme:
-    name: Update WakaTime Stats
+    name: WakaReadme DevMetrics
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        
-      - name: Update README with Date
-        run: |
-          echo "<!-- Last Updated: $(date +'%Y-%m-%d %H:%M:%S') -->" >> UPDATED_README.md
-          
-      - name: Update WakaTime Stats
-        uses: athul/waka-readme@master
+      - uses: athul/waka-readme@master
         with:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
           TIME_RANGE: all_time
-          COMMIT_MESSAGE: "🔄 WakaTime stats updated on $(date +'%Y-%m-%d')"
