@@ -37,10 +37,11 @@ jobs:
           COMMITTER_EMAIL: action-bot@github.com
           AUTHOR_NAME: Molham
           AUTHOR_EMAIL: admin@malhoum.com
-      - name: Add last updated date
+        - name: Add last updated date
         run: |
           DATE=$(date +"🕒 Last Updated: %d %B %Y")
-          echo -e "$DATE\n$(cat README.md)" > README.md
+          sed -i '/🕒 Last Updated:/d' README.md
+          echo -e "$DATE\n\n$(cat README.md)" > README.md
       - name: Commit and push changes
         run: |
           git config --global user.name "GitHubActionBot"
@@ -49,3 +50,4 @@ jobs:
           git commit -m "🕒 Update date and WakaTime stats" || exit 0
           git pull --rebase
           git push
+
