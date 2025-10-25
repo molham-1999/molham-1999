@@ -13,6 +13,7 @@ jobs:
     name: WakaReadme DevMetrics
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - uses: athul/waka-readme@master
         with:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -27,6 +28,7 @@ jobs:
           SHOW_TOTAL: true
           SHOW_MASKED_TIME: true
           STOP_AT_OTHER: true
+          IGNORED_LANGUAGES: YAML JSON TOML
           COMMIT_MESSAGE: "Updated waka-readme graph with new metrics"
           TARGET_BRANCH: main
           TARGET_PATH: README.md
@@ -34,3 +36,14 @@ jobs:
           COMMITTER_EMAIL: action-bot@github.com
           AUTHOR_NAME: Molham
           AUTHOR_EMAIL: admin@malhoum.com
+      - name: Add last updated date
+        run: |
+          DATE=$(date +"🕒 Last Updated: %d %B %Y")
+          sed -i "1i $DATE\n" README.md
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "GitHubActionBot"
+          git config --global user.email "action-bot@github.com"
+          git add README.md
+          git commit -m "🕒 Update date and WakaTime stats"
+          git push
