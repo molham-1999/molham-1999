@@ -91,10 +91,6 @@
   <p style="color:#555;">Updated automatically from <strong>WakaTime</strong></p>
 </div>
 
-- name: Add last updated date
-  run: |
-    DATE=$(date +"%d %B %Y")
-    sed -i "1s/^/🕒 Last Updated: $DATE\n\n/" README.md
 
 <!--START_SECTION:waka-->
 
@@ -112,4 +108,3 @@ Other            36 mins         >------------------------   03.38 %
 <!--END_SECTION:waka-->
 
 
-**Last Updated:** 2025-10-24 21:53:24
