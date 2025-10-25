@@ -13,6 +13,7 @@ jobs:
       - uses: athul/waka-readme@master
         with:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
+          SHOW_UPDATED_DATE: true
           SHOW_TITLE: false
           SECTION_NAME: waka
           BLOCKS: "->"
@@ -20,7 +21,7 @@ jobs:
           TIME_RANGE: all_time
           LANG_COUNT: 10
           SHOW_TIME: true
-          SHOW_TOTAL: false
+          SHOW_TOTAL: true
           SHOW_MASKED_TIME: false
           STOP_AT_OTHER: false
           COMMIT_MESSAGE: "Updated waka-readme graph with new metrics"
