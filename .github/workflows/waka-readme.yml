@@ -13,6 +13,9 @@ jobs:
     name: WakaReadme DevMetrics
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - uses: athul/waka-readme@master
         with:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -36,7 +39,7 @@ jobs:
           AUTHOR_NAME: Molham
           AUTHOR_EMAIL: admin@malhoum.com
 
-      - name: Update date format in README
+      - name: Add Last Updated date to README
         run: |
           CURRENT_DATE=$(date +'%d %B %Y')
-          sed -i "s/From:.*To:.*/Last Updated: $CURRENT_DATE/g" README.md
+          echo "Last Updated: $CURRENT_DATE" | cat - README.md > temp && mv temp README.md
