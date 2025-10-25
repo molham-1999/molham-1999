@@ -2,36 +2,22 @@ name: Update WakaTime Stats
 
 on:
   schedule:
-    - cron: "0 */6 * * *"
+    - cron: "0 0 * * *" 
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   update-readme:
+    name: Update WakaTime stats in README
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-
-      - name: Generate WakaTime Stats
-        uses: anmol098/waka-readme-stats@master
+      - uses: anmol098/waka-readme-stats@master
         with:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
-          SHOW_TITLE: true
-          TITLE: "Last Updated"
-          SHOW_TIME: true
-          SHOW_TOTAL: true
-          SHOW_LANGS: true
-          SHOW_LINES_OF_CODE: false
-          SHOW_PROJECTS: false
-          SHOW_EDITORS: false
-          SHOW_OS: false
-          SHOW_COMMIT: false
-          SHOW_DAYS_OF_WEEK: false
-          SHOW_PROFILE_VIEWS: false
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SHOW_LANGUAGE: true
           SHOW_UPDATED_DATE: true
-          UPDATED_DATE_FORMAT: "02 January 2006"
+          UPDATED_DATE_FORMAT: "%d %B %Y"
           COMMIT_MESSAGE: "Updated WakaTime stats"
-          LOCALE: "en"
-          SYMBOL_VERSION: 2
-          DEBUG_LOGGING: false
