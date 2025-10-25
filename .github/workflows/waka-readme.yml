@@ -1,51 +1,42 @@
 name: Waka Readme
 
 on:
+  # for manual workflow trigger
   workflow_dispatch:
   schedule:
+    # runs at 12 AM UTC (5:30 AM IST)
     - cron: "0 0 * * *"
-
-permissions:
-  contents: write
 
 jobs:
   update-readme:
-    name: Update WakaTime Stats
+    name: WakaReadme DevMetrics
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Setup Python
-        uses: actions/setup-python@v4
+        # this action name
+      - uses: athul/waka-readme@master # do NOT replace with anything else
         with:
-          python-version: "3.x"
-
-      - name: Install WakaReadme
-        run: |
-          python -m pip install --upgrade pip
-          pip install waka-readme
-
-      - name: Generate WakaTime stats
-        run: |
-          waka-readme \
-            --gh-token ${{ secrets.GITHUB_TOKEN }} \
-            --waka-api-key ${{ secrets.WAKATIME_API_KEY }} \
-            --target-path README.md \
-            --section-name "waka" \
-            --blocks "languages" \
-            --time-range "all_time" \
-            --show-title true
-
-      - name: Add last updated date
-        run: |
-          DATE=$(date +"%d %B %Y")
-          sed -i "1i <!--START_SECTION:waka-->\n🕒 Last Updated: $DATE\n<!--END_SECTION:waka-->" README.md
-
-      - name: Commit and Push
-        run: |
-          git config --global user.name "GitHubActionBot"
-          git config --global user.email "action@github.com"
-          git add README.md
-          git commit -m "🕒 Update WakaTime stats with last updated date" || echo "No changes to commit"
-          git pull --rebase origin main
-          git push origin main --force
+          GH_TOKEN: ${{ secrets.GH_TOKEN }} # optional if on profile readme
+          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }} # required
+          ### meta
+          API_BASE_URL: https://wakatime.com/api # optional
+          REPOSITORY: YOUR_GITHUB_USERNAME/YOUR_REPOSITORY_NAME # optional
+          ### content
+          SHOW_TITLE: false # optional
+          SECTION_NAME: waka # optional
+          BLOCKS: -> # optional
+          CODE_LANG: rust # optional
+          TIME_RANGE: all_time # optional
+          LANG_COUNT: 10 # optional
+          SHOW_TIME: true # optional
+          SHOW_TOTAL: true # optional
+          SHOW_MASKED_TIME: true # optional
+          STOP_AT_OTHER: true # optional
+          IGNORED_LANGUAGES: YAML JSON TOML # optional
+          ### commit
+          COMMIT_MESSAGE: Updated waka-readme graph with new metrics # optional
+          TARGET_BRANCH: master # optional
+          TARGET_PATH: README.md # optional
+          COMMITTER_NAME: GitHubActionBot # optional
+          COMMITTER_EMAIL: action-bot@github.com # optional
+          AUTHOR_NAME: molham
+          AUTHOR_EMAIL: admin@malhoun.com
