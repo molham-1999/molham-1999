@@ -94,12 +94,12 @@
 
 <!--START_SECTION:waka-->
 
-```txt
-PHP              9 hrs 40 mins   sssssssssssssolllllllllll   54.15 %
-Blade Template   4 hrs 32 mins   ssssss llllllllllllllllll   25.44 %
-Other            36 mins         jllllllllllllllllllllllll   03.38 %
-Bash             35 mins         ollllllllllllllllllllllll   03.32 %
-HTML             30 mins          llllllllllllllllllllllll   02.85 %
+```all
+Total Time: 17 hrs 52 mins
+
+PHP              9 hrs 40 mins   >>>>>>>>>>>>>>-----------   54.15 %
+Blade Template   4 hrs 32 mins   >>>>>>-------------------   25.44 %
+Other            36 mins         >------------------------   03.38 %
 ```
 
 <!--END_SECTION:waka-->
