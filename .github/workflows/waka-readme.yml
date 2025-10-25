@@ -35,3 +35,8 @@ jobs:
           COMMITTER_EMAIL: action-bot@github.com
           AUTHOR_NAME: Molham
           AUTHOR_EMAIL: admin@malhoum.com
+
+      - name: Update date format in README
+        run: |
+          CURRENT_DATE=$(date +'%d %B %Y')
+          sed -i "s/From:.*To:.*/Last Updated: $CURRENT_DATE/g" README.md
