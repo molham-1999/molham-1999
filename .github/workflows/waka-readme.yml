@@ -10,7 +10,6 @@ permissions:
 
 jobs:
   update-readme:
-    name: WakaReadme DevMetrics
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -41,7 +40,7 @@ jobs:
       - name: Add last updated date
         run: |
           DATE=$(date +"🕒 Last Updated: %d %B %Y")
-          sed -i "1i $DATE\n" README.md
+          echo -e "$DATE\n$(cat README.md)" > README.md
       - name: Commit and push changes
         run: |
           git config --global user.name "GitHubActionBot"
