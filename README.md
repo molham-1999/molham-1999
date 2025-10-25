@@ -94,11 +94,8 @@
 
 <!--START_SECTION:waka-->
 
-
 ```all
 From: 07 October 2025 - To: 24 October 2025
-
-Total Time: 17 hrs 16 mins
 
 PHP              9 hrs 40 mins   >>>>>>>>>>>>>>-----------   54.15 %
 Blade Template   4 hrs 32 mins   >>>>>>-------------------   25.44 %
