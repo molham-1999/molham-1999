@@ -14,6 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: athul/waka-readme@master
         with:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -45,5 +47,6 @@ jobs:
           git config --global user.name "GitHubActionBot"
           git config --global user.email "action-bot@github.com"
           git add README.md
-          git commit -m "🕒 Update date and WakaTime stats"
+          git commit -m "🕒 Update date and WakaTime stats" || exit 0
+          git pull --rebase
           git push
