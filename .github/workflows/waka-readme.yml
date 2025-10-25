@@ -24,7 +24,7 @@ jobs:
           TIME_RANGE: all_time
           LANG_COUNT: 10
           SHOW_TIME: true
-          SHOW_TOTAL: true
+          SHOW_TOTAL: false
           SHOW_MASKED_TIME: false
           STOP_AT_OTHER: true
           IGNORED_LANGUAGES: YAML JSON TOML
@@ -35,9 +35,3 @@ jobs:
           COMMITTER_EMAIL: action-bot@github.com
           AUTHOR_NAME: Molham
           AUTHOR_EMAIL: admin@malhoum.com
-          
-      - name: Add last updated date
-  run: |
-    DATE=$(date +"%d %B %Y")
-    sed -i "1i 🕒 Last Updated: $DATE\n" README.md
-
