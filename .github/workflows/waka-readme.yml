@@ -1,45 +1,37 @@
-name: Waka Readme
+name: Update WakaTime Stats
 
 on:
-  workflow_dispatch:
   schedule:
-    - cron: "0 0 * * *"
-
-permissions:
-  contents: write
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
 
 jobs:
   update-readme:
-    name: WakaReadme DevMetrics
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - uses: athul/waka-readme@master
+      - name: Generate WakaTime Stats
+        uses: anmol098/waka-readme-stats@master
         with:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
           SHOW_TITLE: true
-          SECTION_NAME: waka
-          BLOCKS: "->"
-          CODE_LANG: all
-          TIME_RANGE: all_time
-          LANG_COUNT: 10
+          TITLE: "Last Updated"
           SHOW_TIME: true
           SHOW_TOTAL: true
-          SHOW_MASKED_TIME: false
-          STOP_AT_OTHER: true
-          IGNORED_LANGUAGES: YAML JSON TOML
-          COMMIT_MESSAGE: "Updated waka-readme graph with new metrics"
-          TARGET_BRANCH: main
-          TARGET_PATH: README.md
-          COMMITTER_NAME: GitHubActionBot
-          COMMITTER_EMAIL: action-bot@github.com
-          AUTHOR_NAME: Molham
-          AUTHOR_EMAIL: admin@malhoum.com
-
-      - name: Add Last Updated date to README
-        run: |
-          CURRENT_DATE=$(date +'%d %B %Y')
-          echo "Last Updated: $CURRENT_DATE" | cat - README.md > temp && mv temp README.md
+          SHOW_LANGS: true
+          SHOW_LINES_OF_CODE: false
+          SHOW_PROJECTS: false
+          SHOW_EDITORS: false
+          SHOW_OS: false
+          SHOW_COMMIT: false
+          SHOW_DAYS_OF_WEEK: false
+          SHOW_PROFILE_VIEWS: false
+          SHOW_UPDATED_DATE: true
+          UPDATED_DATE_FORMAT: "02 January 2006"
+          COMMIT_MESSAGE: "Updated WakaTime stats"
+          LOCALE: "en"
+          SYMBOL_VERSION: 2
+          DEBUG_LOGGING: false
