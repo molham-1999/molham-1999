@@ -95,8 +95,6 @@
 <!--START_SECTION:waka-->
 
 ```all
-From: 07 October 2025 - To: 24 October 2025
-
 PHP                              >>>>>>>>>>>>>>-----------   54.15 %
 Blade Template                   >>>>>>-------------------   25.44 %
 Other                            >------------------------   03.38 %
