@@ -15,8 +15,6 @@ jobs:
       - uses: athul/waka-readme@master
         with:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
-          SHOW_UPDATED_DATE: true
-          UPDATED_DATE_FORMAT: "%d/%m/%Y %H:%M:%S"
           SHOW_TITLE: false
           SECTION_NAME: waka
           BLOCKS: "->"
@@ -36,8 +34,9 @@ jobs:
           AUTHOR_EMAIL: admin@malhoum.com
 
       - run: |
-          new_line="=== تنفيذ الأمر === $(date +"%d/%m/%Y %H:%M:%S")"
-          awk -v new="$new_line" '
+          new_line="Updated automatically from WakaTime on $(date +"%d/%m/%Y %H:%M")"
+          centered_line="<p align=\"center\">$new_line</p>"
+          awk -v new="$centered_line" '
           BEGIN { in_section=0; added=0 }
           {
             print_line = $0
@@ -58,5 +57,5 @@ jobs:
           git config --global user.name "GitHubActionBot"
           git config --global user.email "actions@github.com"
           git add README.md
-          git commit -m "Added execution date inside Waka section" || echo "No changes to commit"
+          git commit -m "Updated execution time inside Waka section" || echo "No changes to commit"
           git push
