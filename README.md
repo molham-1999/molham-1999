@@ -75,7 +75,9 @@
       <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Virtualmin_Logo.svg" width="48" height="48" alt="CloudPanel" />
       <br>Virtualmin
     </td>
-      <td align="center" width="96">
+  </tr>
+  <tr>
+    <td align="center" width="96">
       <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Logo_Plesk.svg" width="48" height="48" alt="Plesk" />
       <br>Plesk
     </td>
