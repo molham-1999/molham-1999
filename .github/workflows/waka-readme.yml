@@ -10,11 +10,15 @@ jobs:
     name: WakaReadme DevMetrics
     runs-on: ubuntu-latest
     steps:
+      - name: Print execution date
+        run: |
+          echo "=== تنفيذ الأمر ==="
+          date +"%d/%m/%Y %H:%M:%S"
+          echo
+
       - uses: athul/waka-readme@master
         with:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
-          SHOW_UPDATED_DATE: true
-          UPDATED_DATE_FORMAT: "%d/%m/%Y %H:%M:%S"
           SHOW_TITLE: false
           SECTION_NAME: waka
           BLOCKS: "->"
