@@ -44,11 +44,11 @@ jobs:
             if ($0 ~ /<!--START_SECTION:waka-->/) {
               in_section=1
               print print_line
+              if (!added) {
+                print ts
+                added=1
+              }
               next
-            }
-            if (in_section && !added && $0 ~ /<pre/) {
-              print ts
-              added=1
             }
             print print_line
             if ($0 ~ /<!--END_SECTION:waka-->/) {
