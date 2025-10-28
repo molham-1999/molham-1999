@@ -13,23 +13,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Add execution date at top of README
-        run: |
-          echo "=== تنفيذ الأمر ===" > temp.md
-          date +"%d/%m/%Y %H:%M:%S" >> temp.md
-          echo "" >> temp.md
-          cat README.md >> temp.md
-          mv temp.md README.md
-
-      - name: Commit updated README with date
-        run: |
-          git config --global user.name "GitHubActionBot"
-          git config --global user.email "action-bot@github.com"
-          git add README.md
-          git commit -m "Added execution date to README" || echo "No changes to commit"
-          git push
-
-      - uses: athul/waka-readme@master
+      - name: Run Waka Readme
+        uses: athul/waka-readme@master
         with:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
           SHOW_TITLE: false
@@ -49,3 +34,19 @@ jobs:
           COMMITTER_EMAIL: action-bot@github.com
           AUTHOR_NAME: Molham
           AUTHOR_EMAIL: admin@malhoum.com
+
+      - name: Add execution date at top of README
+        run: |
+          echo "=== تنفيذ الأمر ===" > temp.md
+          date +"%d/%m/%Y %H:%M:%S" >> temp.md
+          echo "" >> temp.md
+          cat README.md >> temp.md
+          mv temp.md README.md
+
+      - name: Commit updated README with date
+        run: |
+          git config --global user.name "GitHubActionBot"
+          git config --global user.email "action-bot@github.com"
+          git add README.md
+          git commit -m "Added execution date to README" || echo "No changes to commit"
+          git push
