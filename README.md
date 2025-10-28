@@ -1,4 +1,4 @@
-<h1 align="left" id="mohammed-title">👋 Hello there!</h1>
+<img width="512" height="512" alt="image" src="https://github.com/user-attachments/assets/a5d40848-47ea-4b18-9f82-b5492e09c5b8" /><h1 align="left" id="mohammed-title">👋 Hello there!</h1>
 <h3 align="left">Full-Stack Web Developer | Linux Administrator | Security Enthusiast | Odoo Developer</h3>
 
 <br>
@@ -66,6 +66,14 @@
         <td align="center" width="96">
       <img src="https://www.svgrepo.com/show/353612/cpanel.svg" width="70" height="48" alt="cPanel" />
       <br>cPanel
+    </td>
+      <td align="center" width="96">
+      <img src="https://cdn.worldvectorlogo.com/logos/cloudpanel.svg](https://upload.wikimedia.org/wikipedia/commons/9/9d/Webmin_Logo.svg" width="48" height="48" alt="CloudPanel" />
+      <br>Webmin
+    </td>
+      <td align="center" width="96">
+      <img src="https://cdn.worldvectorlogo.com/logos/cloudpanel.svg](https://upload.wikimedia.org/wikipedia/commons/9/9d/Webmin_Logo.svg](https://upload.wikimedia.org/wikipedia/commons/8/8c/Virtualmin_Logo.svg" width="48" height="48" alt="CloudPanel" />
+      <br>Virtualmin
     </td>
       <td align="center" width="96">
       <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Logo_Plesk.svg" width="48" height="48" alt="Plesk" />
