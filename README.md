@@ -88,7 +88,6 @@
 
 <div align="center">
   <h2 style="color:#4CAF50;">WakaTime Statistics</h2>
-  <p style="color:#555;">Updated automatically from <strong>WakaTime</strong></p>
 </div>
 
 
