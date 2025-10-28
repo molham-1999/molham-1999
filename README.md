@@ -1,9 +1,3 @@
-=== تنفيذ الأمر ===
-28/10/2025 01:41:38
-
-=== تنفيذ الأمر ===
-28/10/2025 01:39:35
-
 <h1 align="left" id="mohammed-title">👋 Hello there! I'm Molham</h1>
 <h3 align="left">Full-Stack Web Developer | Linux Administrator | Security Enthusiast</h3>
 
