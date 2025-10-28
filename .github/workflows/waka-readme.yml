@@ -15,8 +15,6 @@ jobs:
       - uses: athul/waka-readme@master
         with:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
-          SHOW_UPDATED_DATE: true
-          UPDATED_DATE_FORMAT: "%d/%m/%Y %H:%M"
           SHOW_TITLE: false
           SECTION_NAME: waka
           BLOCKS: "->"
@@ -36,7 +34,7 @@ jobs:
           AUTHOR_EMAIL: admin@malhoum.com
 
       - run: |
-          timestamp="Updated automatically from WakaTime on $(date +"%d/%m/%Y %H:%M")"
+          timestamp="<p align=\"center\">Updated automatically from WakaTime on $(date +"%d/%m/%Y %H:%M")</p>"
           awk -v ts="$timestamp" '
           BEGIN { in_section=0; added=0 }
           {
