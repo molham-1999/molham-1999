@@ -36,29 +36,30 @@ jobs:
           AUTHOR_EMAIL: admin@malhoum.com
 
       - run: |
+          # إعداد السطر الجديد
           new_line="Updated automatically from WakaTime on $(date +"%d/%m/%Y %H:%M")"
           centered_line="<p align=\"center\">$new_line</p>"
+
+          # استبدال السطر داخل قسم waka
           awk -v new="$centered_line" '
-          BEGIN { in_section=0; added=0 }
+          BEGIN { in_section=0 }
           {
-            print_line = $0
             if ($0 ~ /<!--START_SECTION:waka-->/) {
               in_section=1
-              print print_line
+              print
+              print new
               next
             }
-            if (in_section && !added) {
-              print new
-              added=1
-            }
-            print print_line
             if ($0 ~ /<!--END_SECTION:waka-->/) {
               in_section=0
             }
+            if (!in_section) print
           }' README.md > temp.md && mv temp.md README.md
+
+          # إعداد git
           git config --global user.name "GitHubActionBot"
           git config --global user.email "actions@github.com"
+
           git add README.md
           git commit -m "Updated execution time inside Waka section" || echo "No changes to commit"
-          git pull --rebase origin main
           git push origin main
