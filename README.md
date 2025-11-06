@@ -11,6 +11,10 @@
       <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" width="48" height="48" alt="PHP" />
       <br>PHP
     </td>
+     <td align="center" width="96">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQV54EPq6y2bXojxSR0iLxmuLtBheFRZdpQzg&s" width="48" height="48" alt="PHP" />
+      <br>Livewire
+    </td>
     <td align="center" width="96">
       <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/laravel/laravel-original.svg" width="48" height="48" alt="Laravel" />
       <br>Laravel
