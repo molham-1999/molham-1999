@@ -33,17 +33,16 @@ jobs:
       - run: |
           updated_line="Updated automatically from WakaTime on $(date +"%d/%m/%Y %H:%M")"
           awk -v line="$updated_line" '
-          BEGIN {in_section=0}
+          BEGIN {found=0}
           {
-            if ($0 ~ /<!--START_SECTION:waka-->/) {
-              in_section=1
-              print
+            print
+            if (!found && $0 ~ /<!--START_SECTION:waka-->/) {
+              getline
               print line
               print ""
-              next
+              print $0
+              found=1
             }
-            if ($0 ~ /<!--END_SECTION:waka-->/) in_section=0
-            print
           }' README.md > temp.md && mv temp.md README.md
           git config --global user.name "GitHubActionBot"
           git config --global user.email "actions@github.com"
