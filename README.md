@@ -60,18 +60,62 @@
 
 <br>
 
-<!-- DevOps / Tools -->
-<h3>🐳 DevOps & Tools</h3>
+<!-- CMS -->
+<h3>📦 CMS & Builders</h3>
 
 <table>
   <tr>
     <td align="center" width="96">
-      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg" width="48" height="48" alt="Docker" />
-      <br>Docker
-    </td>
-    <td align="center" width="96">
       <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/WordPress_blue_logo.svg" width="48" height="48" alt="WordPress" />
       <br>WordPress
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<!-- DevOps / Tools -->
+<h3>⚙️ DevOps & Tools</h3>
+
+<table>
+  <tr>
+    <td align="center" width="96">
+      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" width="48" height="48" alt="Git" />
+      <br>Git
+    </td>
+    <td align="center" width="96">
+      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg" width="48" height="48" alt="GitHub" />
+      <br>GitHub
+    </td>
+    <td align="center" width="96">
+      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nginx/nginx-original.svg" width="48" height="48" alt="Nginx" />
+      <br>Nginx
+    </td>
+    <td align="center" width="96">
+      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/apache/apache-original.svg" width="48" height="48" alt="Apache" />
+      <br>Apache
+    </td>
+    <td align="center" width="96">
+      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redis/redis-original.svg" width="48" height="48" alt="Redis" />
+      <br>Redis
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="96">
+      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/composer/composer-original.svg" width="48" height="48" alt="Composer" />
+      <br>Composer
+    </td>
+    <td align="center" width="96">
+      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" width="48" height="48" alt="Node.js" />
+      <br>Node.js
+    </td>
+    <td align="center" width="96">
+      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/npm/npm-original-wordmark.svg" width="48" height="48" alt="npm" />
+      <br>npm
+    </td>
+    <td align="center" width="96">
+      <img src="https://www.svgrepo.com/show/353627/cloudflare.svg" width="48" height="48" alt="Cloudflare" />
+      <br>Cloudflare
     </td>
   </tr>
 </table>
@@ -131,4 +175,12 @@
 </div>
 
 <!--START_SECTION:waka-->
+
+
+
+
+
+
+
+
 <!--END_SECTION:waka-->
