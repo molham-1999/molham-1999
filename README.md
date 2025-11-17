@@ -4,8 +4,8 @@
 <br>
 <h2 align="left" id="mohammed-tech">🧠 Favorite Tech Stack</h2>
 
-<!-- Programming Languages & Frameworks -->
-<h3>🖥️ Programming & Frameworks</h3>
+<!-- Programming Languages, Frameworks & Databases -->
+<h3>🖥️ Programming, Frameworks & Databases</h3>
 
 <table>
   <tr>
@@ -33,26 +33,16 @@
       <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" width="48" height="48" alt="HTML5" />
       <br>HTML5
     </td>
-      </tr>
-    <tr>
+  </tr>
+  <tr>
     <td align="center" width="96">
       <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" width="48" height="48" alt="CSS3" />
       <br>CSS3
     </td>
-        <td align="center" width="96">
+    <td align="center" width="96">
       <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/WordPress_blue_logo.svg" width="48" height="48" alt="WordPress" />
       <br>WordPress
     </td>
-  </tr>
-</table>
-
-<br>
-
-<!-- Databases -->
-<h3>🗄️ Databases</h3>
-
-<table>
-  <tr>
     <td align="center" width="96">
       <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg" width="48" height="48" alt="MySQL" />
       <br>MySQL
@@ -65,9 +55,6 @@
 </table>
 
 <br>
-
-
-
 
 <!-- Server & OS -->
 <h3>🖥️ Server & OS Experience</h3>
@@ -99,7 +86,6 @@
       <br>Virtualmin
     </td>
   </tr>
-
   <tr>
     <td align="center" width="96">
       <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Logo_Plesk.svg" width="48" height="48" alt="Plesk" />
