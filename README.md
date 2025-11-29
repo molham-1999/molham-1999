@@ -109,19 +109,18 @@
 </div>
 
 <!--START_SECTION:waka-->
-<p align="center">Updated automatically from WakaTime on 28/11/2025 00:40</p>
 
 ```all
-Total Time: 84 hrs 36 mins
+Total Time: 84 hrs 46 mins
 
-PHP                 40 hrs 4 mins   >>>>>>>>>>>>-------------   47.36 %
-Dart                17 hrs 42 mins  >>>>>--------------------   20.92 %
-Blade Template      16 hrs 6 mins   >>>>>--------------------   19.03 %
+PHP                 40 hrs 5 mins   >>>>>>>>>>>>-------------   47.29 %
+Dart                17 hrs 42 mins  >>>>>--------------------   20.88 %
+Blade Template      16 hrs 6 mins   >>>>>--------------------   19.00 %
 CSS                 1 hr 33 mins    -------------------------   01.85 %
-JavaScript          1 hr 31 mins    -------------------------   01.80 %
+JavaScript          1 hr 31 mins    -------------------------   01.79 %
 XML                 1 hr 28 mins    -------------------------   01.75 %
 Other               1 hr 21 mins    -------------------------   01.61 %
-HTML                56 mins         -------------------------   01.12 %
+HTML                1 hr 5 mins     -------------------------   01.29 %
 Standard ML         39 mins         -------------------------   00.78 %
 Swift               38 mins         -------------------------   00.75 %
 ```
