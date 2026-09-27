@@ -5,18 +5,20 @@ on:
   schedule:
     - cron: "0 0 1 * *"
 
+permissions:
+  contents: write
+
 jobs:
   update-readme:
     name: WakaReadme DevMetrics
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
       - uses: athul/waka-readme@master
         with:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
-          SHOW_UPDATED_DATE: true
-          UPDATED_DATE_FORMAT: "%d/%m/%Y %H:%M"
           SHOW_TITLE: false
           SECTION_NAME: waka
           BLOCKS: "->"
@@ -49,17 +51,21 @@ jobs:
           awk -v new="$centered_line" '
           BEGIN { in_section=0; added=0 }
           {
-            print_line = $0
-            if ($0 ~ /<!--START_SECTION:waka-->/) {
-              in_section=1
-              print print_line
+            # Remove previous automatic timestamp
+            if ($0 ~ /Updated automatically from WakaTime on/) {
               next
             }
-            if (in_section && !added) {
+
+            if ($0 ~ /<!--START_SECTION:waka-->/) {
+              in_section=1
+              print
               print new
               added=1
+              next
             }
-            print print_line
+
+            print
+
             if ($0 ~ /<!--END_SECTION:waka-->/) {
               in_section=0
             }
@@ -67,4 +73,4 @@ jobs:
 
           git add README.md
           git commit -m "Updated execution time inside Waka section" || echo "No changes to commit"
-          git push origin main --force
+          git push origin main
