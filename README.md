@@ -1,5 +1,5 @@
 <h1 align="left" id="mohammed-title">👋 Hello there!</h1>
-<h3 align="left">Full-Stack Web Developer | Linux Administrator | Security Enthusiast | Odoo Developer</h3>
+<h3 align="left">Full-Stack Web Developer | Flutter Mobile App Developer | Linux Administrator | Security Enthusiast | Odoo Developer</h3>
 
 <br>
 <h2 align="left" id="mohammed-tech">🧠 Favorite Tech Stack</h2>
@@ -22,9 +22,19 @@
       <br>Livewire
     </td>
     <td align="center" width="96">
+      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/flutter/flutter-original.svg" width="48" height="48" alt="Flutter" />
+      <br>Flutter
+    </td>
+    <td align="center" width="96">
+      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/dart/dart-original.svg" width="48" height="48" alt="Dart" />
+      <br>Dart
+    </td>
+    <td align="center" width="96">
       <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" width="48" height="48" alt="JavaScript" />
       <br>JavaScript
     </td>
+  </tr>
+  <tr>
     <td align="center" width="96">
       <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" width="48" height="48" alt="Python" />
       <br>Python
@@ -33,8 +43,6 @@
       <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" width="48" height="48" alt="HTML5" />
       <br>HTML5
     </td>
-  </tr>
-  <tr>
     <td align="center" width="96">
       <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" width="48" height="48" alt="CSS3" />
       <br>CSS3
